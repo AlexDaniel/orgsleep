@@ -1,0 +1,20 @@
+#!/bin/bash
+# converts emacs clock time to more parsable format for gnuplot
+INFILE='sleep.org'
+OUTFILE='sleep.dat'
+COLOR_WORKDAY=8
+COLOR_WEEKEND=10
+
+while IFS=' []' read -r _ date1 _ time1 _ date2 _ time2 _; do
+    [[ "$date1$time1$date2$time2" =~ [^0-9:-] ]] && continue
+    read -r hours1 minutes1 <<< "$(date -d "$time1" '+%_H %_M')"
+    read -r hours2 minutes2 <<< "$(date -d "$time2" '+%_H %_M')"
+    if [[ $date1 != "$date2" ]]; then
+        echo "$(date -d "$date1" +%s) $((hours1*60*60 + minutes1*60)) $((86400 - hours1*60*60 - minutes1*60 )) $(($(date -d "$date1" +%u) < 6 ? COLOR_WORKDAY : COLOR_WEEKEND))"
+        echo "$(date -d "$date1 next day" +%s) 0 $((hours2*60*60 + minutes2*60)) $(($(date -d "$date1" +%u) < 6 ? COLOR_WORKDAY : COLOR_WEEKEND))"
+    else
+        echo "$(date -d "$date1" +%s) $((hours1*60*60 + minutes1*60)) $((hours2*60*60 + minutes2*60 - hours1*60*60 - minutes1*60)) $(($(date -d "$date1" +%u) < 6 ? COLOR_WORKDAY : COLOR_WEEKEND))"
+    fi
+done < "$INFILE" > "$OUTFILE"
+
+./plot_sleep.plt
