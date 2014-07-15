@@ -12,7 +12,7 @@ Edit ``sleep.org`` to add some data. Then run:
 ```
 ./processSleepTime
 ```
-It will generate ``sleep.png`` file based on clock times in your ``sleep.org`` file.
+It will generate ``sleep.png`` image based on clock times in your ``sleep.org`` file.
 
 Dependencies
 ------------
