@@ -15,6 +15,8 @@ set format y "%H:%M"
 set xtics 345600 rotate by -60 # 24*60*60*4
 set mxtics 4
 set ytics 3600
+set grid ytics lt 0 lw 1 lc rgb "#bbbbbb"
+set grid xtics lt 0 lw 1 lc rgb "#bbbbbb"
 
 set xlabel "Date"
 set ylabel "Time"
