@@ -65,7 +65,7 @@ ax.grid()
 fig.set_size_inches(25, 6)
 
 plt.tick_params(axis='both', which='major', labelsize=6, direction='out', labeltop='on', labelright='on')
-plt.xticks(rotation=-45)
+plt.xticks(rotation=-75)
 #plt.tick_params(axis='both', which='minor', labelsize=5)
 
 plt.savefig('sleep_new.png', dpi=100, bbox_inches='tight')
