@@ -1,7 +1,0 @@
-#!/bin/bash
-declare -i total=0
-while IFS=':>' read -r _ _ _ _ hours minutes; do
-    [[ ! $hours || ! $minutes ]] && continue
-    ((total += hours * 60 + ${minutes#0}))
-done < sleep.org
-echo "$total"
