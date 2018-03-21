@@ -4,7 +4,7 @@ orgsleep
 Use Emacs Org-mode to graph your sleeping pattern.
 
 
-![my graph](examples/graph.png)
+![my graph](https://raw.githubusercontent.com/AlexDaniel/orgsleep/master/examples/graph.png)
 
 Usage
 -----
