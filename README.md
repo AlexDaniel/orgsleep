@@ -1,22 +1,30 @@
 orgsleep
 ========
 
-Use Emacs Org-mode to graph your sleep pattern.
+Use Emacs Org-mode to graph your sleeping pattern.
 
 
-![My pattern](https://dl.dropboxusercontent.com/u/71236259/sleep.png)
+![my graph](examples/graph.png)
 
 Usage
 -----
-Edit ``sleep.org`` to add some data. Then run:
+
+This command was used to generate the [example](examples/):
+
+```bash
+bin/orgsleep '--title=Sleeping pattern of an average AlexDaniel' \
+             '--subtitle=Sample size: 1'                          \
+             '--out=examples/graph.png'                            \
+             examples/sleep.org examples/tom-thumb.json
 ```
-./processSleepTime
-```
-It will generate ``sleep.png`` image based on clock times in your ``sleep.org`` file.
+
+Use your own org file to plot your data.
+
 
 Dependencies
 ------------
-You must have ``gnuplot`` installed in order for this script to work. On Debian-based systems use:
-```
-sudo apt-get install gnuplot
+You must have ``Image::Magick`` Perl5 module installed. On Debian-based systems use:
+
+```bash
+sudo apt install libimage-magick-perl
 ```
