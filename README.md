@@ -21,8 +21,8 @@ will typically look bad.
 The script does pixel-banging, which is arguably easier than trying to
 force matplotlib or gnuplot to render 1-pixel lines. In fact, there
 were matplotlib *and* gnuplot versions of orgsleep, but they were only
-adequate before I surpassed 2-year milestone. I'm still looking for a
-better solution, please let me know if there's something better.
+adequate before I surpassed a 2-year milestone. I'm still looking for a
+better solution, please let me know if there's something.
 
 Usage
 -----
