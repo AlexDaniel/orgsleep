@@ -121,6 +121,10 @@ sub fill-line($day, $start, $end, $color, :$dash-pattern=()) {
 }
 
 multi sub draw-text($char where *.chars == 1, $x, $y, $color, :$size=1, :$bt) {
+    if %font{$char.ord}:!exists {
+        note “Warning: Character {$char.uniname} is not in the font”;
+        return
+    }
     my @rows = %font{$char.ord}.list;
     loop (my $y-shift = 0; $y-shift < @rows * $size; $y-shift++) {
         my $row = @rows[$y-shift ÷ $size];
