@@ -11,5 +11,5 @@
     },
     "depends"     : [ "Inline::Perl5", "JSON::Fast" ],
     "resources"   : [ ],
-    "source-url"  : "git@github.com:AlexDaniel/orgsleep.git"
+    "source-url"  : "git://github.com/AlexDaniel/orgsleep.git"
 }
