@@ -33,7 +33,7 @@ This command was used to generate the [example](examples/):
 bin/orgsleep '--title=Sleeping pattern of an average AlexDaniel' \
              '--subtitle=Sample size: 1'                          \
              '--out=examples/graph.png'                            \
-             examples/sleep.org examples/tom-thumb.json
+             examples/sleep.org
 ```
 
 Use your own org file to plot your data.
